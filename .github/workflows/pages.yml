@@ -9,16 +9,16 @@ on:
 jobs:
  build:
    runs-on: ubuntu-latest
-   
+
    steps:
      # main ブランチを取得する
      - name: Checkout
        uses: actions/checkout@v3
 
      # pnpm のセットアップをする
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v2.2.2
-      with:
+     - name: Setup pnpm
+       uses: pnpm/action-setup@v2.2.2
+       with:
         version: 7
 
      # Node.js のセットアップをする
