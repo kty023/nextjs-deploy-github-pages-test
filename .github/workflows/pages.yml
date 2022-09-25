@@ -34,12 +34,11 @@ jobs:
 
      # ビルドする
      - name: Build
-       run: pnpm build && pnpm export
+       run: pnpm build
 
      # GitHub Pages にデプロイする
      - name: Deploy
        uses: peaceiris/actions-gh-pages@v3
        with:
          github_token: ${{ secrets.GITHUB_TOKEN }}
-         branch: master
          publish_dir: out
