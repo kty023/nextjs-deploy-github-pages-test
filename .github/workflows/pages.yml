@@ -33,8 +33,8 @@ jobs:
        run: pnpm install
 
      # ビルドする
-#     - name: Build
-#       run: pnpm run build
+     - name: Build
+       run: pnpm run build
 
      # GitHub Pages にデプロイする
 #     - name: Deploy
