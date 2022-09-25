@@ -24,11 +24,11 @@ jobs:
 
      # パッケージをインストールする
      - name: Install dependencies
-       run: yarn --frozen-lockfile
+       run: pnpm install
 
      # ビルドする
      - name: Build
-       run: yarn build
+       run: pnpm build
 
      # GitHub Pages にデプロイする
      - name: Deploy
