@@ -9,23 +9,22 @@ on:
 jobs:
  build:
    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18]
 
-   steps:
+    steps:
     - uses: actions/checkout@v2
     - uses: pnpm/action-setup@v2.2.2
       with:
         version: 7
-
-     # Node.js のセットアップをする
-     - name: Setup Node
-       uses: actions/setup-node@v3
-       with:
-        node-version: 18
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
         cache: 'pnpm'
-
-     # パッケージをインストールする
-     - name: Install dependencies
-       run: pnpm install
+    - name: Install dependencies
+      run: pnpm install
 
      # ビルドする
      - name: Build
