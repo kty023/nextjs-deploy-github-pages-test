@@ -32,11 +32,16 @@ jobs:
      - name: Install dependencies
        run: pnpm install
 
-     # ビルドする
+     # Next.jsアプリをビルドする
+     # プロジェクトルート直下に.nextディレクトリができる
      - name: Build
-       run: |
-         pnpm build
-         pnpm export
+       run: pnpm build
+
+     # 静的なHTMLとしてNext.jsアプリを生成する
+     # プロジェクトルート直下にoutディレクトリができる
+     # そのなかに、HTMLファイル群と、それらが読み込むJSファイル群を収めた_nextディレクトリがある
+     - name: Export
+       run: pnpm export
 
      # GitHub Pages にデプロイする
      - name: Deploy
