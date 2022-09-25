@@ -35,6 +35,7 @@ jobs:
      # ビルドする
      - name: Build
        run: pnpm build
+       run: pnpm export
 
      # GitHub Pages にデプロイする
      - name: Deploy
