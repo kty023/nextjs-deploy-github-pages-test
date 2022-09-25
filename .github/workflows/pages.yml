@@ -43,9 +43,15 @@ jobs:
      - name: Export
        run: pnpm export
 
+     # しかしGitHub Pagesの仕様として_から始まるディレクトリが見えず404となる
+     # つまりHTMLからJSを読み込めない
+     # これを回避するために.nojekyllファイルをoutディレクトリに作る
+     - name: Add nojekyll
+       run: touch ./out/.nojekyll
+
      # GitHub Pages にデプロイする
      - name: Deploy
        uses: peaceiris/actions-gh-pages@v3
        with:
          github_token: ${{ secrets.GITHUB_TOKEN }}
-         publish_dir: out
+         publish_dir: ./out
