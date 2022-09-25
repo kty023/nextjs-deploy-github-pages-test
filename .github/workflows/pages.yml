@@ -15,15 +15,18 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v3
 
+     # pnpm のセットアップをする
+    - name: Setup pnpm
+    - uses: pnpm/action-setup@v2.2.2
+      with:
+        version: 7
+
      # Node.js のセットアップをする
      - name: Setup Node
-       uses: pnpm/action-setup@v2
+       uses: actions/setup-node@v3
        with:
-         node-version: 18
-
-     # pnpm のセットアップをする
-    - name: Install pnpm
-      run: curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm@next-7
+        node-version: 18
+        cache: 'pnpm'
 
      # パッケージをインストールする
      - name: Install dependencies
