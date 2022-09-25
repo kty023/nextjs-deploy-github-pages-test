@@ -33,12 +33,12 @@ jobs:
        run: pnpm install
 
      # ビルドする
-     - name: Build
-       run: pnpm run build
+#     - name: Build
+#       run: pnpm run build
 
      # GitHub Pages にデプロイする
-     - name: Deploy
-       uses: peaceiris/actions-gh-pages@v3
-       with:
-         github_token: ${{ secrets.GITHUB_TOKEN }}
-         publish_dir: out
+#     - name: Deploy
+#       uses: peaceiris/actions-gh-pages@v3
+#       with:
+#         github_token: ${{ secrets.GITHUB_TOKEN }}
+#         publish_dir: out
