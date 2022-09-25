@@ -5,4 +5,6 @@ const nextConfig = {
 
 module.exports = {
   basePath: process.env.GITHUB_ACTIONS && "/nextjs-deploy-github-pages-test",
+  assetPrefix: !debug ? "/notes/" : "",
+  images: { loader: "custom" },
 };
