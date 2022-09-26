@@ -10,4 +10,12 @@ module.exports = {
   trailingSlash: true,
 //  assetPrefix: !debug ? "/notes/" : "",
 //  images: { loader: "custom" },
+  // experimental: {
+  //   images: {
+  //       unoptimized: true,
+  //   },
+  // },
+  images: {
+      unoptimized: true,
+  },
 };
