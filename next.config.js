@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  basePath: process.env.GITHUB_ACTIONS ? "/nextjs-deploy-github-pages-test" : "",
+  trailingSlash: true,
 };
+module.exports = nextConfig;
 
-const debug = process.env.NODE_ENV !== "production";
+// const isProd = process.env.NODE_ENV === 'production';
 
 // const withOptimizedImages = require('next-optimized-images');
 
@@ -38,8 +41,8 @@ const debug = process.env.NODE_ENV !== "production";
 //   // },
 // };
 
-module.exports = {
-  basePath: process.env.GITHUB_ACTIONS && "/nextjs-deploy-github-pages-test",
-  trailingSlash: true,
-  assetPrefix: '/',
-};
+// module.exports = {
+//   basePath: process.env.GITHUB_ACTIONS && "/nextjs-deploy-github-pages-test",
+//   trailingSlash: true,
+//   assetPrefix: '/',
+// };
