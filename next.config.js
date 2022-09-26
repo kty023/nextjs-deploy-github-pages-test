@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  basePath: process.env.GITHUB_ACTIONS ? "/nextjs-deploy-github-pages-test" : "",
+  basePath: process.env.GITHUB_ACTIONS ? "/nextjs-deploy-github-pages-test" : "/",
   trailingSlash: true,
 };
 module.exports = nextConfig;
