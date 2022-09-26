@@ -30,7 +30,7 @@ jobs:
 
      # パッケージをインストールする
      - name: Install dependencies
-       run: pnpm install --frozen-lockfile
+       run: pnpm install
 
      # Next.jsアプリをビルドする
      # プロジェクトルート直下に.nextディレクトリができる
